@@ -1,8 +1,3 @@
-Projeto-T-cnico-3-Mapeamento-de-Rede-em-Docker
-Compreendido! Se o repositório terá apenas o `README.md` e uma pasta com o PDF e os resultados, podemos simplificar as instruções de uso no `README`.
-
-Aqui está a versão do `README.md` ajustada para refletir essa estrutura:
-
 ---
 
 # Mapeamento de Rede em Docker
