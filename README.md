@@ -1,4 +1,4 @@
-<img width="417" height="532" alt="image" src="https://github.com/user-attachments/assets/b3aa3da5-1905-4699-8df7-a2af73a63c26" /># Projeto-T-cnico-3-Mapeamento-de-Rede-em-Docker
+Projeto-T-cnico-3-Mapeamento-de-Rede-em-Docker
 Compreendido! Se o repositório terá apenas o `README.md` e uma pasta com o PDF e os resultados, podemos simplificar as instruções de uso no `README`.
 
 Aqui está a versão do `README.md` ajustada para refletir essa estrutura:
