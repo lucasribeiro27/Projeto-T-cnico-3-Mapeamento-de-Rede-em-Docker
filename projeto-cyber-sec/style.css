@@ -1,0 +1,274 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  color: #333;
+}
+
+a.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #005eff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+a.btn:hover {
+  background-color: #0045c7;
+}
+
+.imagens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.imagens img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.imagens img:hover {
+  transform: scale(1.02);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+ul li {
+  margin-bottom: 6px;
+}
+
+ul li a {
+  color: #005eff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+  color: #003b99;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+.fechar {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 10;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.dots {
+  text-align: center;
+  padding: 10px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 3px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #005eff;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  background-color: #005eff;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 100;
+  h1{
+    color: white;
+  }
+}
+
+.header-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 20px;
+  margin: 0;
+}
+
+header nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #ffd966;
+}
+
+/* Espaçamento para compensar o header fixo */
+.spacer {
+  height: 60px; /* ajuste conforme a altura do header */
+}
+
+/* Ajuste geral do body/container */
+body {
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 30px 20px; /* aumentei padding para “dar um respiro” */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Footer já ajustado conforme passamos antes */
+footer {
+  background-color: #005eff;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  border-radius: 0 0 8px 8px;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer .icon {
+  margin-right: 8px;
+  font-size: 20px;
+  vertical-align: middle;
+  color: #ffd966;
+  font-weight: bold;
+}
+
+footer a {
+  color: #ffd966;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffea85;
+  text-decoration: underline;
+}
+

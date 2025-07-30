@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projeto de Cyber Security</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+  <div class="header-container">
+    <h1>Projeto de Cyber Security</h1>
+    <nav>
+      <a href="#pdf">PDF</a>
+      <a href="#img">Imagens</a>
+      <a href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+<div class="spacer"></div>
+
+  <div class="container">
+    <h1>Projeto Técnico: Mapeamento de Rede com Docker</h1>
+
+    <section id="pdf">
+      <h2>📄 PDF do Projeto</h2>
+      <a href="../resultados/projeto-cyber-sec.pdf" target="_blank" class="btn">Visualizar PDF</a>
+    </section>
+
+    <section id="img">
+      <h2>📷 Imagens do Projeto</h2>
+      <div class="slideshow-container" id="slideshow-container"></div>
+      <div class="dots" id="dots-container"></div>
+    </section>
+
+    <section id="download">
+  <h2>📁 Arquivos Complementares</h2>
+  <ul>
+    <li><a href="..//resultados/projeto.zip" download>Baixar arquivos complementares (ZIP)</a></li>
+  </ul>
+</section>
+
+  </div>
+
+  <script>
+    const imagens = [];
+    for(let i = 1; i <= 19; i++) {
+      imagens.push(i + ".png");
+    }
+
+    const slideshowContainer = document.getElementById("slideshow-container");
+    const dotsContainer = document.getElementById("dots-container");
+
+   
+    imagens.forEach((imgName, idx) => {
+      const slideDiv = document.createElement("div");
+      slideDiv.classList.add("slide", "fade");
+      slideDiv.style.display = "none";
+
+      const img = document.createElement("img");
+      img.src = `../resultados/imgs-arquivos/${imgName}`;
+      img.alt = `Imagem ${idx + 1}`;
+
+      slideDiv.appendChild(img);
+      slideshowContainer.appendChild(slideDiv);
+
+     
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      dot.addEventListener("click", () => currentSlide(idx + 1));
+      dotsContainer.appendChild(dot);
+    });
+
+    
+    const prevArrow = document.createElement("a");
+    prevArrow.classList.add("prev");
+    prevArrow.innerHTML = "&#10094;";
+    prevArrow.onclick = () => plusSlides(-1);
+    slideshowContainer.appendChild(prevArrow);
+
+    const nextArrow = document.createElement("a");
+    nextArrow.classList.add("next");
+    nextArrow.innerHTML = "&#10095;";
+    nextArrow.onclick = () => plusSlides(1);
+    slideshowContainer.appendChild(nextArrow);
+
+  
+    let slideIndex = 1;
+    let autoSlide;
+
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("slide");
+      const dots = document.getElementsByClassName("dot");
+
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+      }
+
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].classList.add("active");
+    }
+
+    function plusSlides(n) {
+      clearInterval(autoSlide);
+      showSlides(slideIndex += n);
+      startAutoSlide();
+    }
+
+    function currentSlide(n) {
+      clearInterval(autoSlide);
+      showSlides(slideIndex = n);
+      startAutoSlide();
+    }
+
+    function startAutoSlide() {
+      autoSlide = setInterval(() => {
+        plusSlides(1);
+      }, 10000);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      showSlides(slideIndex);
+      startAutoSlide();
+    });
+  </script>
+  <div class="spacer"></div>
+<footer>
+  <p>Projeto Técnico: Mapeamento de Rede com Docker</p>
+  <p>Escolas: VNW & Kensei Sec</p>
+  <p><span class="icon">®</span> Desenvolvido por Lucas Ribeiro — 
+    <a href="https://github.com/lucasribeiro27" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </p>
+</footer>
+</body>
+
+
+</html>
